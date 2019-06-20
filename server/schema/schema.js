@@ -12,67 +12,6 @@ const {
 const Movies = require('../models/Movie');
 const Directors = require('../models/Director');
 
-/*const directorJson = [
-    {"name": "Quentin Tarantino", "age": 55}, //5d0b6c37cbc5f72d2424d72c
-    {"name": "Roadford", "age": 72}, //5d0b6e00cbc5f72d2424d72f
-    {"name": "Nolan", "age": 46}, //5d0b6e0ecbc5f72d2424d730
-    {"name": "Richie", "age": 47} //5d0b6e1acbc5f72d2424d731
-]*/
-
-/*const moviesJson = [
-    {"name": "Pulp Fiction", "genre": "Crime", "directorId": "5d0b6c37cbc5f72d2424d72c"},
-    {"name": "1984", "genre": "Sci-Fi", "directorId": "5d0b6e00cbc5f72d2424d72f"},
-    {"name": "Origin", "genre": "Sci-Fi", "directorId": "5d0b6e0ecbc5f72d2424d730"},
-    {"name": "Snatch", "genre": "Crime", "directorId": "5d0b6e1acbc5f72d2424d731"},
-    {"name": "V For Vendetta", "genre": "Thriller", "directorId": "5d0b6e00cbc5f72d2424d72f"},
-    {"name": "The Hateful Eight", "genre": "Comedy", "directorId": "5d0b6c37cbc5f72d2424d72c"},
-    {"name": "Ignorious Basterds", "genre": "Crime", "directorId": "5d0b6e1acbc5f72d2424d731"},
-]*/
-
-/*const movies = [{
-        id: 1,
-        name: 'Pulp Fiction',
-        genre: 'Crime',
-        directorID: 1
-    },
-    {
-        id: 2,
-        name: 'Mov2',
-        genre: 'Thriller',
-        directorID: 2
-    },
-    {
-        id: 3,
-        name: 'Mov3',
-        genre: 'Sci-Fi',
-        directorID: 3
-    },
-    {
-        id: 4,
-        name: 'Pn',
-        genre: 'Comedy',
-        directorID: 2
-    },
-    {
-        id: 5,
-        name: 'Movi',
-        genre: 'Crime',
-        directorID: 1
-    },
-    {
-        id: 6,
-        name: 'Movi',
-        genre: 'Crime',
-        directorID: 1
-    },
-    {
-        id: 7,
-        name: 'Movi',
-        genre: 'Crime',
-        directorID: 1
-    },
-]*/
-
 const MovieType = new GraphQLObjectType({
     name: 'Movie',
     fields: () => ({
