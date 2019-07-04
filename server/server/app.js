@@ -7,7 +7,7 @@ const app = express();
 const PORT = 3005;
 
 //Connect to Mongoose
-mongoose.connect('mongodb+srv://Dmitriy:ZnrKvPrEsd3W0GDm@cluster0-tv7br.mongodb.net/graphql-tutorial', {useNewUrlParser: true});
+mongoose.connect('mongodb+srv://Dmitriy:mYDEfT4l3dhdhI2v@cluster0-tv7br.mongodb.net/graphql-tutorial', {useNewUrlParser: true});
 
 app.use('/graphql', graphqlHTTP({
     schema,
