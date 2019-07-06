@@ -54,7 +54,7 @@ class Movies extends Component {
           <MoviesForm handleChange={this.handleChange}
                       handleSelectChange={this.handleSelectChange}
                       handleCheckboxChange={this.handleCheckboxChange}
-                      selectValue={{ id, name, genre, watched, rate, directorId }}
+                      selectedValue={{ id, name, genre, watched, rate, directorId }}
                       open={open}
                       onClose={this.handleClose} />
           <div className={classes.wrapper}>
