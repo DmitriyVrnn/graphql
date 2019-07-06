@@ -10,14 +10,14 @@ const PORT = 3005;
 mongoose.connect('mongodb+srv://Dmitriy:mYDEfT4l3dhdhI2v@cluster0-tv7br.mongodb.net/graphql-tutorial', {useNewUrlParser: true});
 
 app.use('/graphql', graphqlHTTP({
-    schema,
-    graphiql: true,
-}))
+  schema,
+  graphiql: true,
+}));
 
 const dbConnection = mongoose.connection;
-dbConnection.on('error', err => console.log(`Connection error ${err}`))
-dbConnection.once('open', () => console.log('Connected to DB'))
+dbConnection.on('error', err => console.log(`Connection error ${err}`));
+dbConnection.once('open', () => console.log('Connected to DB'));
 
 app.listen(PORT, err => {
-    err ? console.log(err) : console.log(`Server started`);
-})
+  err ? console.log(err) : console.log(`Server started`);
+});
