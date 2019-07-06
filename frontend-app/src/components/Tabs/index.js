@@ -32,7 +32,9 @@ const SimpleTabs = ({ classes, theme }) => {
               <Tab label="Directors" icon={<MovieCreationIcon/>}/>
             </Tabs>
         </AppBar>
-        <SwipeableViews axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'} index={value} onChangeIndex={handleChangeIndex}>
+        <SwipeableViews axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+                        index={value}
+                        onChangeIndex={handleChangeIndex}>
           <TabContainer dir={theme.direction}><Movies/></TabContainer>
           <TabContainer dir={theme.direction}><Directors/></TabContainer>
         </SwipeableViews>
