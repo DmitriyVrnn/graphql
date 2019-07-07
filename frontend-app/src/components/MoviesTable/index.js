@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Paper from '@material-ui/core/Paper';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -15,39 +15,30 @@ import CreateIcon from '@material-ui/icons/Create';
 
 import MoviesDialog from '../MoviesDialog';
 
-import withHoc from './MoviesTableHoc';
+import withHocs from './MoviesTableHoc';
 
 const movies = [
-  {id: 1, name: 'Pulp Fiction',
-    genre: 'Crime', rate: 10, director: {name: 'Quentin Tarantino'}, watched: true},
-  {id: 2, name: 'Lock, Stock and Two Smoking Barrels',
-    genre: 'Crime-comedy', rate: 9, director: {name: 'Guy Ritchie'}, watched: false},
+  { id: 1, name: 'Pulp Fiction', genre: 'Crime', rate: 10, director: { name: 'Quentin Tarantino' }, watched: true },
+  { id: 2, name: 'Lock, Stock and Two Smoking Barrels', genre: 'Crime-comedy', rate: 9, director: { name: 'Guy Ritchie' }, watched: false },
 ];
 
-class MoviesTable extends Component {
+class MoviesTable extends React.Component {
   state = {
     anchorEl: null,
     openDialog: false,
   };
 
-  handleDialogOpen = () => {
-    this.setState({openDialog: true});
-  };
+  handleDialogOpen = () => { this.setState({ openDialog: true }); };
+  handleDialogClose = () => { this.setState({ openDialog: false }); };
 
-  handleDialogClose = () => {
-    this.setState({openDialog: false});
-  };
-
-  handleClick = ({currentTarget}, data) => {
+  handleClick = ({ currentTarget }, data) => {
     this.setState({
       anchorEl: currentTarget,
-      data
-    })
+      data,
+    });
   };
 
-  handleClose = () => {
-    this.setState({anchorEl: null});
-  };
+  handleClose = () => { this.setState({ anchorEl: null }); };
 
   handleEdit = () => {
     this.props.onOpen(this.state.data);
@@ -60,13 +51,15 @@ class MoviesTable extends Component {
   };
 
   render() {
-    const {anchorEl, openDialog, data: activeElem = {}} = this.state;
+    const { anchorEl, openDialog, data: activeElem = {} } = this.state;
 
-    const {classes} = this.props;
+    const { classes } = this.props;
+
+    console.log(this.props.data);
 
     return (
         <>
-          <MoviesDialog open={openDialog} handleClose={this.handleDialogClose} id={activeElem.id}/>
+          <MoviesDialog open={openDialog} handleClose={this.handleDialogClose} id={activeElem.id} />
           <Paper className={classes.root}>
             <Table>
               <TableHead>
@@ -88,16 +81,15 @@ class MoviesTable extends Component {
                         <TableCell align="right">{movie.rate}</TableCell>
                         <TableCell>{movie.director.name}</TableCell>
                         <TableCell>
-                          <Checkbox checked={movie.watched} disabled/>
+                          <Checkbox checked={movie.watched} disabled />
                         </TableCell>
                         <TableCell align="right">
                           <>
                             <IconButton color="inherit" onClick={(e) => this.handleClick(e, movie)}>
-                              <MoreIcon/>
+                              <MoreIcon />
                             </IconButton>
-                            <Menu id="simple-menu" anchorEl={anchorEl} open={Boolean(anchorEl)}
-                                  onClose={this.handleClose}>
-                              <MenuItem onClick={this.handleEdit}><CreateIcon/> Edit</MenuItem>
+                            <Menu id="simple-menu" anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={this.handleClose} >
+                              <MenuItem onClick={this.handleEdit}><CreateIcon /> Edit</MenuItem>
                               <MenuItem onClick={this.handleDelete}><DeleteIcon/> Delete</MenuItem>
                             </Menu>
                           </>
@@ -109,8 +101,7 @@ class MoviesTable extends Component {
             </Table>
           </Paper>
         </>
-    )
+    );
   }
-}
-
-export default withHoc(MoviesTable)
+};
+export default withHocs(MoviesTable);
