@@ -27,10 +27,10 @@ const SimpleTabs = ({ classes, theme }) => {
   return (
       <div className={classes.root}>
         <AppBar position="static">
-            <Tabs variant="fullWidth" value={value} onChange={handleChange}>
-              <Tab label="Movies" icon={<CameraIcon/>}/>
-              <Tab label="Directors" icon={<MovieCreationIcon/>}/>
-            </Tabs>
+          <Tabs variant="fullWidth" value={value} onChange={handleChange}>
+            <Tab label="Movies" icon={<CameraIcon/>}/>
+            <Tab label="Directors" icon={<MovieCreationIcon/>}/>
+          </Tabs>
         </AppBar>
         <SwipeableViews axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
                         index={value}

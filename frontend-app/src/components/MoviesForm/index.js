@@ -28,7 +28,7 @@ class MoviesForm extends Component{
     const { selectedValue, onClose } = this.props;
     const { id, name, genre, rate, directorId, wathed } = selectedValue;
     onClose();
-  }
+  };
 
   render(){
     const { classes, open, handleChange, handleSelectChange, handleCheckboxChange, selectedValue = {} } = this.props;
