@@ -18,11 +18,15 @@ const TabContainer = ({children, dir}) => (
     </Typography>
 );
 
-const SimpleTabs = ({ classes, theme }) => {
+const SimpleTabs = ({classes, theme}) => {
   const [value, setValue] = useState(0);
 
-  const handleChange = (event, value) => { setValue(value) };
-  const handleChangeIndex = index => { setValue(index) };
+  const handleChange = (event, value) => {
+    setValue(value)
+  };
+  const handleChangeIndex = index => {
+    setValue(index)
+  };
 
   return (
       <div className={classes.root}>
