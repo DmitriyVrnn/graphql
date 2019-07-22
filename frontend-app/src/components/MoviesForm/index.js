@@ -24,7 +24,6 @@ class MoviesForm extends Component{
     const { selectedValue, onClose, addMovie } = this.props;
     const { name, genre, rate, directorId, watched } = selectedValue;
     addMovie({ name, genre, rate: Number(rate), directorId, watched: Boolean(watched) });
-    console.log({ name, genre, rate: Number(rate), directorId, watched: Boolean(watched) })
     onClose();
   };
 
@@ -32,6 +31,7 @@ class MoviesForm extends Component{
     const { data = {}, classes, open, handleChange, handleSelectChange, handleCheckboxChange, selectedValue = {} } = this.props;
     const { name, genre, rate, directorId, watched } = selectedValue;
     const { directors = []} = data;
+
     return(
         <Dialog onClose={this.handleClose} open={open} aria-labelledby="simple-dialog-title">
           <DialogTitle className={classes.title} id="simple-dialog-title">Movie information</DialogTitle>
